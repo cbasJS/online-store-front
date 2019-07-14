@@ -8,6 +8,7 @@ import MainLayout from "../layouts/MainLayout"
 import SEO from "../components/SEO"
 import Thumbnail from "../components/Thumbnail"
 import SectionThumbnails from "../components/SectionThumbnails"
+import Loading from "../components/Loading"
 
 // Config
 global.Headers = fetch.Headers
@@ -25,7 +26,6 @@ const ListPage = () => {
         return res.json()
       })
       .then(products => {
-        console.log(products)
         setData(JSON.parse(products.body))
       })
       .catch(err => {
@@ -38,9 +38,11 @@ const ListPage = () => {
       <h1>List of products</h1>
       <Link to="/">Go to index</Link> <br></br>
       <Link to="/upload/">Upload a product</Link>
-      <SectionThumbnails>
-        {data !== null &&
-          data.map(lineItem => {
+      {data === null ? (
+        <Loading />
+      ) : (
+        <SectionThumbnails>
+          {data.map(lineItem => {
             return (
               <Thumbnail
                 key={lineItem._id}
@@ -50,7 +52,8 @@ const ListPage = () => {
               />
             )
           })}
-      </SectionThumbnails>
+        </SectionThumbnails>
+      )}
     </MainLayout>
   )
 }
