@@ -1,0 +1,22 @@
+@import "../../styles/variables.css";
+
+.header {
+  background: var(--G0B152);
+  margin-bottom: 1.45rem;
+  max-width: var(--xxxlarge);
+}
+
+.wrapper {
+  margin: 0;
+  max-width: 960px;
+  padding: 1.45rem var(--size-spacer-medium);
+}
+
+.h1 {
+  margin: 0;
+}
+
+.a {
+  color: white;
+  text-decoration: none;
+}
