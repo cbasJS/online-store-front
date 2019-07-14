@@ -20,8 +20,10 @@ const MainLayout = ({ children }) => {
   return (
     <div className={style.mainLayout}>
       <Header siteTitle={title}></Header>
-      <main className={style.main}>{children}</main>
-      <Footer></Footer>
+      <main className={style.main}>
+        <div className={style.wrapper}>{children}</div>
+      </main>
+      <Footer />
     </div>
   )
 }

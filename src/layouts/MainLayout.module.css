@@ -15,3 +15,13 @@ html {
 .main {
   width: 100%;
 }
+
+.wrapper {
+  padding: var(--size-spacer-medium);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: var(--size-spacer-large);
+  }
+}
