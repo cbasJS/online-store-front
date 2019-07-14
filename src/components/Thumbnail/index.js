@@ -31,7 +31,7 @@ const Thumbnail = ({ productName, productPrice, productImage }) => {
 
 Thumbnail.propTypes = {
   productName: PropTypes.string,
-  productPrice: PropTypes.number,
+  productPrice: PropTypes.any,
   productImage: PropTypes.string,
   _id: PropTypes.string,
 }
