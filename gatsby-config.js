@@ -1,8 +1,13 @@
+const config = require("./data/config")
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: config.title,
+    shortDescription: config.shortDescription,
+    description: config.description,
+    author: config.author,
+    mail: config.mail,
+    pathPrefix: config.pathPrefix,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,12 +24,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
+        name: config.title,
+        short_name: config.shortDescription,
+        start_url: config.pathPrefix,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
